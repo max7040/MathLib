@@ -25,7 +25,6 @@ MathLib/
 │   └── Matrix.cpp            # Implementación de la clase Matrix
 ├── test/
 │   └── test_matrix.cpp       # Programa de prueba de la librería
-├── CMakeLists.txt            # Archivo de configuración del proyecto
 └── README.md                 # Documentación principal
 ```
 
@@ -35,26 +34,28 @@ MathLib/
 
 ### 🔧 Requisitos previos
 - Compilador C++17 (g++, clang++, o MSVC)
-- CMake ≥ 3.10
 - Git instalado
 
-### 🧱 Compilación del proyecto
+### 🧱 Compilación del proyecto (usando g++)
 
-Ejecuta los siguientes comandos en tu terminal:
+Abre tu terminal dentro de la carpeta principal del proyecto `MathLib` y ejecuta:
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/max7040/MathLib.git
-cd MathLib
+# Compilar el programa
+g++ src/Matrix.cpp test/test_matrix.cpp -Iinclude -o test_matrix.exe
 
-# Generar archivos de compilación
-cmake -S . -B build
+# Ejecutar el programa
+./test_matrix.exe
+```
 
-# Compilar el proyecto
-cmake --build build
-
-# Ejecutar el programa de prueba
-./build/test/test_matrix
+📤 **Salida esperada:**
+```
+Suma:
+6 8 
+10 12 
+Multiplicación:
+19 22 
+43 50
 ```
 
 ---
@@ -88,24 +89,13 @@ int main() {
 }
 ```
 
-📤 **Salida esperada:**
-```
-Suma:
-6 8 
-10 12 
-Multiplicación:
-19 22 
-43 50
-```
-
 ---
 
 ## 🧠 Conceptos aplicados
 
 - **Librerías reutilizables:** separan la lógica de implementación (`src`) y definición (`include`).
 - **Principios SOLID:** favorecen el bajo acoplamiento y la alta cohesión.
-- **CMake:** facilita la compilación multiplataforma y el empaquetado modular.
-- **SemVer (Versionado Semántico):**
+- **Versionado Semántico (SemVer):**
   - `MAJOR` → cambios incompatibles.
   - `MINOR` → nuevas funciones compatibles.
   - `PATCH` → correcciones menores.
